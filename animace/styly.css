@@ -1,0 +1,80 @@
+.inline-container, .inline-block-container, .block-container, .flex-container{
+    outline-width: 1px;
+    outline-color: black;
+}
+.inline-div:hover, .inline-block-div:hover, .block-div:hover, .flex-div:hover {
+    background-color: purple;
+}
+.inline-div{
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+   animation-name: animace1;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: background-color 3s;
+    color: gray;
+    display: inline;
+    background-color: black;
+}
+.inline-block-div{
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-name: animace1;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: background-color 3s;
+    color: gray;
+    display: inline-block;
+    background-color: red;
+}
+.block-div{
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-name: animace1;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: background-color 3s;
+    color: gray;
+    display: block;
+    background-color: green;
+}
+.flex-div{
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-name: animace1;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: background-color 3s;
+    color: gray;
+    background-color: blue;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@keyframes animace1 {
+    0% {width: 100px}
+    100% {height: 200px}
+}
