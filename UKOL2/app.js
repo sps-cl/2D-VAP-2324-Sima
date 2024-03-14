@@ -1,53 +1,52 @@
-const mysql2 = require('mysql2');;
-const express = require('express');
-const path = require('path');
+const mysql2 = require("mysql2");
+const express = require("express");
+const path = require("path");
 
-const connections = mysql2.createConnection(
+const connection = mysql2.createConnection(
     {
-        host: '127.0.0.3',
-        user: 'root',
-        password: 'root',
-        port: '3306',
-        database: 'moje_db',
+        host: "127.0.0.1",
+        user: "root",
+        password: "root",
+        port: "3306",
+        database: "moje_db"
     }
 );
 
-connections.connect((error) => {
+connection.connect((error) => {
     if (error) {
         console.log(error);
     } else {
-        console.log("Úspěšně přpojeno.");
-        const jmeno = "Vaclav"
-        const prijmeni = "Sima"
+        console.log("Úspěšně připojeno.");
 
-        connections.query(
-            `INSERT INTO uzivatele(jmeno, prijmeni) VALUES(${jmeno}, ${prijmeni})`,
-            (error, data) => {
-                if (error) console.log(error)
-            });
-        connections.query(
-            `SELECT * FROM uzivatele;` , (error, data) => {
+        connection.query(
+            'SELECT * FROM uzivatele;', (error, data) => {
                 if (error) console.log(error);
                 else {
                     console.log(data);
                 }
+            }
+        )
     }
-    )
-}
 });
 
+
 const app = express();
-app.use(express.static(__dirname));
-app.use(express.urlencoded({extended: true}))
+app.get(express.static(__dirname));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(_dirname, `index.html`));
+    res.sendFile(path.join(__dirname, "index.html"));
 })
 
 app.post("/uloz-uzivatele", (req, res) => {
     console.log(req.body);
-    res.redirect("/")
-});
+    connection.query(
+        `INSERT INTO uzivatele(FirstName, LastName) VALUES('${req.body.FirstName}', '${req.body.LastName}');` ,
+        (error, data) => {
+            if (error) console.log(error);
+        });
+    res.redirect("/");
+})
 
-app.listen(5500)
+app.listen(5500);

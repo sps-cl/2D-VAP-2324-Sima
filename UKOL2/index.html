@@ -6,33 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-<h1>
-Formulář
-</h1>
-<form action="/uloz-uzivatele" method="post">
-    <input type="text" name="jmeno" placeholder="Jméno">
-    <input type="text" name="prijmeni" placeholder="Příjmení"> 
-    <input type="submit" value="Poslat">  
-</form>
-<input type="button" value="Poslat2" onclick="poslat()"></input>
-    <script>fetch()</script>
-
-
+    <h1>Formulář</h1>
+    <form action="/uloz-uzivatele" method="post">
+        <input type="text" name="jmeno" placeholder="Jmeno">
+        <input type="text" name="prijmeni" placeholder="Prijmeni">
+        <input type="submit" value="Poslat">
+    </form>
 </body>
 </html>
-
-<script>
-    async function send(){
-        let date = await fetch("/save-user",
-        {
-            method: "post",
-            headers: {
-                "content-type": "application/json"
-        },
-        body: {
-            name: document.getElementById("name").value,
-            surname: document.getElementById("surname").value
-            }
-        })
-    }
-</script>
