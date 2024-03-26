@@ -1,0 +1,6 @@
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\bin\Debug\CMD 1.exe.config
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\bin\Debug\CMD 1.exe
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\bin\Debug\CMD 1.pdb
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\obj\Debug\CMD 1.csprojResolveAssemblyReference.cache
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\obj\Debug\CMD 1.exe
+R:\VAP\2D-VAP-2324-Sima\CMD 1\CMD 1\CMD 1\obj\Debug\CMD 1.pdb
